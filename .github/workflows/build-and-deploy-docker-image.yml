@@ -1,0 +1,22 @@
+name: Build and Deploy Docker Image
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Install dependencies
+        uses: actions/checkout@v2
+        run: yarn
+
+      - name: Publish Docker Image to GitHub Registry
+        uses: TilBlechschmidt/gp-docker-action@v0.2-alpha
+        with:
+          image-name: file-host
+          image-tag: ${{ github.run_id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}

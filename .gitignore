@@ -1,3 +1,6 @@
+# test upload dir
+uploads/
+
 # config
 .env
 

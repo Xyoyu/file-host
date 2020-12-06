@@ -1,5 +1,5 @@
 # test upload dir
-uploads/
+/uploads/
 
 # config
 .env

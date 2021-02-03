@@ -16,7 +16,7 @@ export class UploadController {
   constructor(private readonly uploadService: UploadService) {}
 
   @Post()
-  @UseInterceptors(FileInterceptor('file'))
+  @UseInterceptors(FileInterceptor('file', { limits: { fileSize: Infinity } }))
   upload(@UploadedFile() file, @Body() body) {
     return this.uploadService.upload(file, body && body.expectedHost)
   }

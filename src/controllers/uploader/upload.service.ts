@@ -19,20 +19,20 @@ export class UploadService {
     }
 
     const fileExtension = extension(file.mimetype)
-    if (!fileExtension || !Constants.ALLOWED_TYPES.includes(fileExtension)) {
-      return new HttpException(
-        `File type '${file.mimetype}' is not allowed`,
-        HttpStatus.BAD_REQUEST,
-      )
-    }
+    // if (!fileExtension || !Constants.ALLOWED_TYPES.includes(fileExtension)) {
+    //   return new HttpException(
+    //     `File type '${file.mimetype}' is not allowed`,
+    //     HttpStatus.BAD_REQUEST,
+    //   )
+    // }
 
-    if (file.size > Constants.MAX_UPLOAD_FILE_SIZE) {
-      const fileSizeInMb = (file.size / Constants.ONE_MB_AS_BYTES).toFixed(2)
-      return new HttpException(
-        `File size ${fileSizeInMb}mb is too big. Max upload file size: ${maxFileSizeInMb}mb`,
-        HttpStatus.BAD_REQUEST,
-      )
-    }
+    // if (file.size > Constants.MAX_UPLOAD_FILE_SIZE) {
+    //   const fileSizeInMb = (file.size / Constants.ONE_MB_AS_BYTES).toFixed(2)
+    //   return new HttpException(
+    //     `File size ${fileSizeInMb}mb is too big. Max upload file size: ${maxFileSizeInMb}mb`,
+    //     HttpStatus.BAD_REQUEST,
+    //   )
+    // }
 
     const fileIndex = ExistingTxtService.generateUniqueId()
     const extensionWithDot = `.${fileExtension}` // I know, it's stupid

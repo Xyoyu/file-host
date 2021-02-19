@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://i.imgur.com/lGB137b.png" width="320" alt="Basic File Host" />
+  <img src="https://i.imgur.com/lGB137b.png" alt="Basic File Host" />
 </p>
 
 ## Installation
